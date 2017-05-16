@@ -22,21 +22,51 @@ function OnClick(value) {
   }
 
 class Heatmap extends React.Component{
+  constructor() {
+        super();
+        this.state = {heatmap:null};
+      }
+
+      componentDidMount() {
+      this.loadheatmap();
+    }
+
+    loadheatmap() {
+        let request = new Request('http://localhost:3000/heatmap', {
+          method: 'GET',
+          cache: false});
+
+        fetch(request)
+          .then((res) => res.json())
+          .then((heatmap) => {
+            this.setState({
+              heatmap: this.state.heatmap? this.state.heatmap.concat(heatmap) : heatmap,
+            });
+          });
+      }
 
 render() {
   return(
-    <div className='heatmap'>
+    <div className="row m-b-3">
+    <div className="col-xs-12 col-md-6">
     <CalendarHeatmap
-      values={[
-        { date: '2017-01-01', count: 1 },
-        { date: '2017-01-03', count: 4 },
-        { date: '2016-12-06', count: 2 },
-      ]}
+      values={this.state.heatmap
+      }
       classForValue={ClickClassForValue}
       titleForValue={TitleForValue}
       onClick={OnClick}
     />
      </div>
+     <div className="col-xs-12 col-md-6">
+     <CalendarHeatmap
+       values={this.state.heatmap
+       }
+       classForValue={ClickClassForValue}
+       titleForValue={TitleForValue}
+       onClick={OnClick}
+     />
+      </div>
+      </div>
   );
 }
 }

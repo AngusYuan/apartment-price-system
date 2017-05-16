@@ -21,6 +21,8 @@ function OnClick(value) {
     }
   }
 
+const githubURL = "https://github.com/AngusYuan/apartment-price-system";
+
 class Heatmap extends React.Component{
   constructor() {
         super();
@@ -47,7 +49,11 @@ class Heatmap extends React.Component{
 
 render() {
   return(
-    <div className='heatmap'>
+  <div>
+  <div className="row">
+    <div className="col s12 m8 l6">
+    <h5 className="z-depth-5" className="card-panel teal lighten-2">Apartment Number</h5>
+    <p>Show how many apartment news per day</p>
     <CalendarHeatmap
       values={this.state.heatmap
       }
@@ -55,7 +61,37 @@ render() {
       titleForValue={TitleForValue}
       onClick={OnClick}
     />
-     </div>
+    </div>
+     <div className="col s12 m8 l6">
+     <h5 className="z-depth-5" className="card-panel teal lighten-2">Apartment Price</h5>
+     <p>Show average price per day</p>
+     <CalendarHeatmap
+       values={this.state.heatmap
+       }
+       classForValue={ClickClassForValue}
+       titleForValue={TitleForValue}
+       onClick={OnClick}
+     />
+      </div>
+    </div>
+
+  <footer className="page-footer">
+  <div className="container">
+    <div className="row">
+      <div className="col l6 s12">
+        <h5 className="white-text">Project Detail</h5>
+        <p className="grey-text text-lighten-4">You can use link here to see my project on github</p>
+      </div>
+      <div className="col l4 offset-l2 s12">
+        <h5 className="white-text">Link</h5>
+        <ul>
+          <li><a className="grey-text text-lighten-3" href={githubURL}>github</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
   );
 }
 }
