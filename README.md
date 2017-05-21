@@ -12,9 +12,9 @@ Extended Function
 3.	Click the points in the heatmap and show the detailed information in the same web page
 
 Selection of technical skills and framework
-Frontend: Node (Restful) + React (with Webpack and Babel)+Materialize (UI design)
-Backend: Python (Scrapy, Selector is xpath), Node+Express (Server)
-Database: MongoDB (Storage), Redis(Cache)
+1. Frontend: Node (Restful) + React (with Webpack and Babel)+Materialize (UI design)
+2. Backend: Python (Scrapy, Selector is xpath), Node+Express (Server)
+3. Database: MongoDB (Storage), Redis(Cache)
 
 Timeline
 Week one: 
