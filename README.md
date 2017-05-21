@@ -16,10 +16,9 @@ Selection of technical skills and framework
 2. Backend: Python (Scrapy, Selector is xpath), Node+Express (Server)
 3. Database: MongoDB (Storage), Redis(Cache)
 
-Timeline
 Week one: 
-1.	Finish web crawling and connected with database
-2.	Design corresponding test cases and test
+1. Finish web crawling and connected with database
+2. Design corresponding test cases and test
 
 Week two: 
 1.	Finish frontend design
